@@ -1,4 +1,5 @@
 var express=require("express");
+var app=express();
 var mangoose=require("mongoose");
 const dns = require('dns');
 const cors=require("cors")
@@ -9,7 +10,7 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
     console.log("connected succesfully")
 }).catch((err)=>{ console.log(err) })
 
-var app=express();
+
 app.get("/",(req,res)=>{
     res.send({msg:"hello harshitha let us start backend for todos"})
 })
