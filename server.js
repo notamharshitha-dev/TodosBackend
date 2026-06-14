@@ -18,7 +18,8 @@ app.get("/",(req,res)=>{
     res.send({msg:"hello harshitha let us start backend for todos"})
 })
 app.post("/",(req,res)=>{
-    res.send({msg:res.body})
+    console.log(req.body)
+    res.send({msg:req.body})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
