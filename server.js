@@ -1,4 +1,5 @@
 var express=require("express");
+var newUserTodo=require("./models/todo.model")
 var app=express();
 var mangoose=require("mongoose");
 const dns = require('dns');
@@ -13,6 +14,9 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 
 app.get("/",(req,res)=>{
     res.send({msg:"hello harshitha let us start backend for todos"})
+})
+app.post("/",(req,res)=>{
+    res.send({msg:"got ur request to post"})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
