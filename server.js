@@ -23,7 +23,7 @@ app.post("/",(req,res)=>{
     console.log(req.body)
     const newUser=new newUserTodo(req.body);
     newUser.save();
-    res.send({msg:"data Posted succesfully"})
+    res.send({msg:req.body})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
