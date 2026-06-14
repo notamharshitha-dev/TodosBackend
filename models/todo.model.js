@@ -9,4 +9,5 @@ var userTodos=new mongoose.Schema(
         }
     }
 )
-module.exports=userTodos
+var todo=mongoose.model("todo",userTodos)
+module.exports=todo
