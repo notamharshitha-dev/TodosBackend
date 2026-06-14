@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
 })
 app.post("/",(req,res)=>{
     console.log(req.body)
-    const newUser=new newUserTodo({todo:req.body.todo,status:req.body.status});
+    var newUser=new newUserTodo({todo:req.body.todo,status:req.body.status});
     newUser.save();
     res.send({msg:req.body})
 })
