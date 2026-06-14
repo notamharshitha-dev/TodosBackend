@@ -1,6 +1,8 @@
 var express=require("express");
 var newUserTodo=require("./models/todo.model")
 var app=express();
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
 var mangoose=require("mongoose");
 const dns = require('dns');
 const cors=require("cors")
@@ -16,7 +18,7 @@ app.get("/",(req,res)=>{
     res.send({msg:"hello harshitha let us start backend for todos"})
 })
 app.post("/",(req,res)=>{
-    res.send({msg:"got ur request to post"})
+    res.send({msg:res.body})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
