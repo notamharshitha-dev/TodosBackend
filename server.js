@@ -9,7 +9,7 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 }).catch((err)=>{ console.log(err) })
 var app=express();
 app.get("/",(req,res)=>{
-    res.send({msg:"hello harshitha let us start backend"})
+    res.send({msg:"hello harshitha let us start backend for todos"})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
