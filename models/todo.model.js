@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 var userTodos=new mongoose.Schema(
     {
-        title:{
+        todo:{
             type:String
         },
         status:{

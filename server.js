@@ -1,6 +1,7 @@
 var express=require("express");
 var kothaTodo=require("./models/todo.model")
 var app=express();
+app.use(express.static(__dirname+"/public"))
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
 var mangoose=require("mongoose");
@@ -14,16 +15,18 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 }).catch((err)=>{ console.log(err) })
 
 
-app.get("/",(req,res)=>{
-   db.kothaTodo.find().then((res)=>{ console.log(res)
-     })
-    res.send(res)
-})
+
 app.post("/",(req,res)=>{
-    console.log(req.body)
-    var newUser=new kothaTodo({todo:req.body.todo,status:req.body.status});
+   // console.log("line 20",req.body)
+    var newUser=new kothaTodo(req.body);
     newUser.save();
     res.send({msg:req.body})
+})
+app.get("/",(req,res)=>{
+    kothaTodo.find().then((res)=>{
+       res.send(res)
+    })
+    res.send({msg:"no data found"})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
