@@ -15,7 +15,7 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 
 
 app.get("/",(req,res)=>{
-    kothaTodo.find().then((res)=>{ console.log(res)
+   db.kothaTodo.find().then((res)=>{ console.log(res)
      })
     res.send(res)
 })
