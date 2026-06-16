@@ -23,8 +23,8 @@ app.post("/",(req,res)=>{
     res.send({msg:req.body})
 })
 app.get("/",(req,res)=>{
-    kothaTodo.find().then((res)=>{
-       res.send(res)
+    kothaTodo.find().then((data)=>{
+       res.send(data)
     })
     res.send({msg:"no data found in databse  "})
 })
