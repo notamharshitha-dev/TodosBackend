@@ -17,7 +17,7 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 app.get("/",(req,res)=>{
     newUserTodo.find().then((res)=>{ console.log(res)
      })
-    res.send({data:res})
+    res.send(res)
 })
 app.post("/",(req,res)=>{
     console.log(req.body)
