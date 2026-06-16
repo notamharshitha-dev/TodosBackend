@@ -1,5 +1,5 @@
 var express=require("express");
-var newUserTodo=require("./models/todo.model")
+var kothaTodo=require("./models/todo.model")
 var app=express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true })); 
@@ -17,11 +17,11 @@ mangoose.connect("mongodb+srv://harshitha:hello123@harshitha.vdue5eb.mongodb.net
 app.get("/",(req,res)=>{
     newUserTodo.find().then((res)=>{ console.log(res)
      })
-    res.send({msg:"hello harshitha let us start backend for todos"})
+    res.send({data:res})
 })
 app.post("/",(req,res)=>{
     console.log(req.body)
-    var newUser=new newUserTodo({todo:req.body.todo,status:req.body.status});
+    var newUser=new kothaTodo({todo:req.body.todo,status:req.body.status});
     newUser.save();
     res.send({msg:req.body})
 })
