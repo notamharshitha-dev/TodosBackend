@@ -26,7 +26,7 @@ app.get("/",(req,res)=>{
     kothaTodo.find().then((res)=>{
        res.send(res)
     })
-    res.send({msg:"no data found"})
+    res.send({msg:"no data found in databse  "})
 })
 app.listen(2000,()=>{
     console.log("running at port number 2000")
